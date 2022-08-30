@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ *
+ * @ingroup templates
+ */
+#}
+{% if breadcrumb %}
+  <div class="bg-dark col-12">
+    <div class="container bg-dark">
+          <ol class="breadcrumb" style="background-color:#212529;">
+            <li>
+              <a href="{{ path('<front>') }}">
+                <img class="img-fluid" width="30px" src="/web/themes/custom/drupaltheme/src/home.png" alt="{{ 'Home'|t }}" />
+              </a>
+            </li>
+            {% for item in breadcrumb %}
+              <li {{ item.attributes }}>
+                {% if item.url %}
+                  <a href="{{ item.url }}">{{ item.text }}</a>
+                {% else %}
+                  {{ item.text }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ol>
+{% endif %}

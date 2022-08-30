@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-expand-lg flex-wrap navbar-dark text-light bg-dark">
+    <div class="container d-flex">
+      <div class="col-12 col-lg-8 d-flex align-items-center">
+        <div class="navbar-brand d-flex align-items-center col-8 col-lg-6 m-0">
+            {{ drupal_entity('block', 'sitebranding') }}
+        </div>
+      </div>
+      <button class="navbar-toggler collapsed order-1 order-lg-0 mt-3 mt-lg-0" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex col-9 col-lg-4 order-0 position-relative mt-3 mt-lg-0">
+          {{ drupal_entity('block','sitesearch') }}
+      </div>
+      <div class="collapse order-3 navbar-collapse justify-content-md-end flex-wrap col-md-9" id="navbarSupportedContent">
+          {{ drupal_menu('main',1, 2, true) }}
+      </div>
+          {{ drupal_entity('block','drupaltheme_breadcrumbs') }}
+    </div>
+    {{ drupal_entity('block', 'slayder') }}
+  </nav>
+</header>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="title" content="Sitename"/>
+  <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"/>
+  <meta name="MobileOptimized" content="width"/>
+  <meta name="HandheldFriendly" content="true"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon"/>
+  <title>Home | Sitename</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+
+  <!-- Drupal files, need only for slice -->
+  <script type="application/json" data-drupal-selector="drupal-settings-json">
+    {
+      "path": {
+        "baseUrl": "/",
+        "scriptPath": null,
+        "pathPrefix": "",
+        "currentPath": "",
+        "currentPathIsAdmin": false,
+        "isFront": true,
+        "currentLanguage": "en"
+      },
+      "pluralDelimiter": "\u0003",
+      "ajaxPageState": {
+        "libraries": "",
+        "theme": "common",
+        "theme_token": null
+      },
+      "ajaxTrustedUrl": {},
+      "views": {
+        "ajax_path": "/views/ajax",
+        "ajaxViews": {}
+      },
+      "user": {
+        "uid": 0
+      }
+    }
+  </script>
+
+</head>
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{% block main %}
+    <div class="page">
+
+      {# Header #}
+      {% if page.header %}
+        {% block header %}
+            {{ page.header }}
+        {% endblock %}
+      {% endif %}
+
+      {# Content #}
+
+        {# Highlighted #}
+        {% if page.highlighted %}
+          {% block highlighted %}
+            <div class="highlighted">{{ page.highlighted }}</div>
+          {% endblock %}
+        {% endif %}
+
+        {# Help #}
+        {% if page.help %}
+          {% block help %}
+            {{ page.help }}
+          {% endblock %}
+        {% endif %}
+
+        {# Content #}
+        {% block content %}
+          <main class="main-container">
+            <div class="layout">
+              <div class="layout__main">
+                {{page.content}}
+              </div>
+            </div>
+          </main>
+        {% endblock %}
+      {% if page.footer %}
+        {% block footer %}
+            {{ page.footer }}
+        {% endblock %}
+      {% endif %}
+    </div>
+{% endblock %}
+
+

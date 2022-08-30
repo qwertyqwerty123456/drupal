@@ -1,0 +1,27 @@
+{% import _self as menus %}
+{{ menus.menu_links(items, attributes, 0) }}
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% for item in items %}
+        {% if item.is_expanded %}
+            <ul class="navbar-nav mr-auto justify-content-between dropdown-menu-dark w-100">
+                <li class="nav-item dropdown-menu-dark dropdown">
+                    <a href="{{ item.url }}" class="nav-item px-2 nav-link dropdown-toggle px-xl-4" role="button" data-bs-toggle="dropdown" aria-expanded="true">{{ item.title }}</a>
+                </li>
+                {% for sub_item in item.below %}
+                    <li class="dropdown-menu bg-dark p-0">
+                        <a href="{{ sub_item.url }}" class="nav-link">{{ sub_item.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <ul class="nav navbar-nav flex-column col-sm-4">
+                <li class="nav-item">
+                    <a href="{{ item.url }}" class="nav-item px-2 nav-link px-xl-4">{{ item.title }}</a>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+

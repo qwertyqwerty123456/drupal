@@ -1,0 +1,44 @@
+<div class="pb-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+
+            {% set itemsCount = items|length %}
+            {% set flag = 1 %}
+
+            {# print slider buttons #}
+            {% for i in 0..itemsCount-1 %}
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ i }}"
+                        class="{{ flag ?  "active" : "" }}"
+                        aria-current="true" aria-label="Slide 1"></button>
+
+                {% set flag = 0 %}
+
+            {% endfor %}
+
+        </div>
+
+        <div class="carousel-inner">
+
+            {# print slider items #}
+            {% set flag = 1 %}
+            {% for item in items %}
+                {# first item should be active initially #}
+                <div class="carousel-item {{ flag ? "active" : "" }}">
+                    <div class="carousel-item__wrapper d-block d-sm-flex">
+                        <div class="carousel__info text-align-right bg-dark color-light p-5 col-12 col-sm-6">
+                            <h1 class="carousel__title">{{ item.content['#paragraph'].field_header_slide.value }}</h1>
+                            <p class="carousel__description">{{ item.content['#paragraph'].field_description_slide.value }}</p>
+                            <a href="{{ item.content['#paragraph'].field_link_slide.value[0]['uri'] }}"
+                               class="btn btn-secondary m-0 px-5 carousel__link">{{ item.content['#paragraph'].field_link_slide.value[0]['title'] }}</a>
+                        </div>
+                        <img src="{{ file_url(item.content['#paragraph'].field_image_slide.entity.field_media_image.entity.fileuri) }}"
+                             class="d-block col-12 col-sm-6 img-fluid slider-image"
+                             alt="#">
+                    </div>
+                </div>
+
+                {% set flag = 0 %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

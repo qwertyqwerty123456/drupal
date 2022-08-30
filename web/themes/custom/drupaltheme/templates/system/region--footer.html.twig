@@ -1,0 +1,17 @@
+<footer class="mt-auto footer-dark text-light bg-secondary footer">
+    <div class="container">
+        <div class="footer--menu d-flex flex-column flex-sm-row">
+          {{ drupal_menu('footer',1, 2, true) }}
+        </div>
+        <div class="footer__bottom d-flex flex-column-reverse flex-md-row mt-5 border-top justify-content-between align-items-md-center py-3">
+          <div class="footer__copy col-5 col-md-3">{{ drupal_entity('block', 'drupaltheme_powered') }}</div>
+          <div class="col-12 col-md-9 d-flex align-items-center justify-content-md-end mb-3 mb-md-0 footer-sites">
+            <div class="navbar-brand d-flex align-items-center col-md-5">
+                {{ drupal_entity('block', 'sitebranding') }}
+            </div>
+            <a href="#" class="col-2"><img class="img-fluid w-100" src="/web/themes/custom/drupaltheme/src/i20-logo.png" alt=""></a>
+            <a href="#" class="col-1 mx-3"><img class="img-fluid w-100" src="/web/themes/custom/drupaltheme/src/drupaljedi-logo.png" alt=""></a>
+          </div>
+        </div>
+    </div>
+</footer>
