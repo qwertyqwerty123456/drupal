@@ -1,0 +1,6 @@
+name: DrupalModule
+description: custom module
+type: module
+core: 8.x
+package: DrupalModule
+core_version_requirement: ^9 || ^8

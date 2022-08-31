@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Add new layout suggestion for products view
+ *
+ * @param array $suggestions
+ * @param array $variables
+ * @return void
+ */
+function bootcampmodule_theme_suggestions_views_view_alter(array &$suggestions, array $variables)
+{
+    $suggestions[] = 'view__custom__' . $variables['view']->id();
+}
+
+/**
+ * Add new layout suggestion for box block(by default it is one column section, created in layout builder)
+ *
+ * @param array $suggestions
+ * @param array $variables
+ */
+function bootcampmodule_theme_suggestions_layout_alter(array &$suggestions, array $variables)
+{
+    $sectionName = $variables['content']['#settings']['label'];
+
+    if ($sectionName === "box_block") {
+        $suggestions[] = $sectionName;
+    }
+
+}
