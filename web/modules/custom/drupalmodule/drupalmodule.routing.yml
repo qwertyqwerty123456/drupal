@@ -1,7 +1,7 @@
 drupalmodule.thank_page:
   path: '/thank-you'
   defaults:
-    _controller: '\Drupal\drupalmodule\Controller\ThankPageController::content'
+    _controller: '\Drupal\drupalmodule\Controller\ThankYouPageController::content'
   requirements:
     _permission: 'access content'
 
@@ -9,6 +9,6 @@ drupalmodule.thankyou_page_settings:
   path: '/admin/structure/drupalmodule/thankyou_page_settings'
   defaults:
     _form: '\Drupal\drupalmodule\Form\ThankYouPageSettingsForm'
-    _title: 'Settings for thank page text'
+    _title: 'Settings'
   requirements:
     _permission: 'administer site configuration'

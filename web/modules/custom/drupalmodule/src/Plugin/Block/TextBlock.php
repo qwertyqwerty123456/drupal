@@ -33,7 +33,7 @@ class TextBlock extends BlockBase
 
         $form['header'] = [
             '#type' => 'textfield',
-            '#title' => $this->t('Header'),
+            '#title' => $this->t('header'),
             '#default_value' => $config['header'] ?? '',
         ];
 

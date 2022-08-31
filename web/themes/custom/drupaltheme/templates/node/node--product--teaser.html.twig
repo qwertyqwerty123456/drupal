@@ -1,10 +1,7 @@
 
 <div class="col">
     <div class="card h-100 first__card">
-        <img class="img-fluid card-img-top first__card-img"
-             src="{{ content.field_image_product['#items'].entity.fileurl }}"
-             alt="{{ content.field_image_product.0['#item'].alt }}">
-             
+            <img class="img-fluid card-img-top first__card-img" src="{{ file_url(content.field_product_image['#items'].entity.field_media_image.entity.fileuri) }}" alt="{{ content.field_product_image.0['#item'].alt }}">
         <div class="card-body d-flex flex-column first__card-body">
             <h5 class="card-title first__card-title">{{ label }}</h5>
             <p class="card-text first__card-description">{{ content.field_description_product }}</p>

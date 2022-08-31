@@ -5,7 +5,7 @@ namespace Drupal\drupalmodule\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class ThankPageSettingsForm extends ConfigFormBase
+class ThankYouPageSettingsForm extends ConfigFormBase
 {
 
     public function getFormId(): string
